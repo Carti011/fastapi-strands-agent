@@ -1,13 +1,13 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 class ChatRequest(BaseModel):
     """
-    DTO para a requisição de chat.
+    Modelo de dados para a requisição de entrada do chat.
     """
-    message: str
+    message: str = Field(..., description="A mensagem de texto enviada pelo usuário.", min_length=1)
 
 class ChatResponse(BaseModel):
     """
-    DTO para a resposta do chat.
+    Modelo de dados para a resposta do Agente.
     """
-    response: str
+    response: str = Field(..., description="A resposta textual gerada pelo Agente de IA.")
