@@ -4,3 +4,5 @@ python-dotenv>=1.0.0
 httpx>=0.26.0
 pydantic>=2.6.0
 strands-agents>=0.1.0
+streamlit>=1.31.0
+watchdog>=4.0.0
