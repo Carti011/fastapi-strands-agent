@@ -62,17 +62,11 @@ OLLAMA_MODEL=llama3:latest
 
 ---
 
-## 📸 Instruções
+## 📸 Demonstração e Uso
 
 ### Swagger - http://127.0.0.1:8000/docs
-### Utilize o Metodo Post / Chat
+### Utilize o método POST /chat, clique em Try it out e insira seu JSON.
 ![Diagrama de Arquitetura](./assets/swagger_print-1.png)
-
-### Clique em "Try it out" e digite sua pergunta dentro do Schema.
-![Swagger UI](./assets/swagger_print-2.png)
-
-### Em response Body Estara o Json com resultado
-![Swagger UI](./assets/swagger_print-3.png)
 
 ### Exemplo Pergunta
 ![Swagger UI](./assets/swagger_print-4.png)
@@ -105,10 +99,24 @@ POST /chat
 
 ---
 
+## 💻 Interface Web (Opcional)
+
+Para uma experiência mais amigável, o projeto inclui um frontend interativo desenvolvido com Streamlit.
+Mantenha a API rodando em um terminal (uvicorn app.main:app --reload).
+
+Abra um novo terminal e execute:
+
+```Bash
+  streamlit run frontend.py
+```
+A interface abrirá automaticamente no seu navegador padrão.
+
+---
+
 ## 📂 Estrutura do Projeto
 ```Plaintext
 .
-├── app/
+├── app/                      # Backend (FastAPI & Agentes)
 │   ├── agents/
 │   │   ├── __init__.py
 │   │   └── core_agent.py     # Service Layer (Lógica do Agente e Mock Adapter)
@@ -121,9 +129,10 @@ POST /chat
 │   │   └── math_tools.py     # Domain Logic (Ferramentas e Sanitização)
 │   ├── __init__.py
 │   └── main.py               # Application Entrypoint (Server Config)
-├── assets/                   # Imagens, Diagramas e Prints para documentação
+├── assets/                   # Imagens da documentação
+├── frontend.py               # Interface Gráfica (Streamlit)
 ├── .env                      # Variáveis de Ambiente (Configuração Local)
 ├── .gitignore                # Regras de ignorância do Git
-├── requirements.txt          # Dependências do Projeto (Python Packages)
+├── requirements.txt          # Dependências do Projeto
 └── README.md                 # Documentação do Projeto
 ```
